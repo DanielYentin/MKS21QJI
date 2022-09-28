@@ -20,27 +20,23 @@ PD = 0
 DEVO = 1
 DUCKY = 2
 
-
+dict = {}
 with open("krewes.txt", "r") as f:
     tempstr = f.readlines()
     templist = tempstr.split("@@@")
     for i in templist:
         templist[i] = templist[i].split("$$$")
-    dict = {}
     for i in templist:
         for _ in templist[i]:
             if templist[i][PD] not in dict:
-                dict[templist[i][PD]]
+                dict[templist[i][PD]] = [(templist[i][DEVO], templist[i][DUCKY])]
             else:
-                dict[templist[i][PD]].append([])
+                dict[templist[i][PD]].append((templist[i][DEVO], templist[i][DUCKY]))
 
-krewes = {
-	2: ["NICHOLAS",  "ANTHONY",  "BRIAN",  "SAMUEL",  "JULIA",  "YUSHA",  "CORINA",  "CRAIG",  "FANG MIN",  "JEFF",  "KONSTANTIN",  "AARON",  "VIVIAN",  "AYMAN",  "TALIA",  "FAIZA",  "ZIYING",  "YUK KWAN",  "DANIEL",  "WEICHEN",  "MAYA",  "ELIZABETH",  "ANDREW",  "VANSH",  "JONATHAN",  "ABID",  "WILLIAM",  "HUI",  "ANSON",  "KEVIN",  "DANIEL",  "IVAN",  "JASMINE",  "JEFFREY"], 
-	7: ["DIANA",  "DAVID",  "SAM",  "PRATTAY",  "ANNA",  "JING YI",  "ADEN",  "EMERSON",  "RUSSELL",  "JACOB",  "WILLIAM",  "NADA",  "SAMANTHA",  "IAN",  "MARC",  "ANJINI",  "JEREMY",  "LAUREN",  "KEVIN",  "RAVINDRA",  "SADI",  "EMILY",  "GITAE",  "MAY",  "MAHIR",  "VIVIAN",  "GABRIEL",  "BRIANNA",  "JUN HONG",  "JOSEPH",  "MATTHEW",  "JAMES",  "THOMAS",  "NICOLE",  "Karen"],
-	8: ["ALEKSANDRA",  "NAKIB",  "AMEER",  "HENRY",  "DONALD",  "YAT LONG",  "SEBASTIAN",  "DAVID",  "YUKI",  "SHAFIUL",  "DANIEL",  "SELENA",  "JOSEPH",  "SHINJI",  "RYAN",  "APRIL",  "ERICA",  "JIAN HONG",  "VERIT",  "JOSHUA",  "WILSON",  "AAHAN",  "GORDON",  "JUSTIN",  "MAYA",  "FAIYAZ",  "SHREYA",  "ERIC",  "JEFFERY",  "BRIAN",  "KEVIN",  "SAMSON",  "BRIAN",  "HARRY",  "wanying"]
-}
+DEVO = 0
+DUCKY = 1
 
 rrow = random.choice(list(krewes.keys()))
 rcol = random.choice(krewes[rrow])
 
-print(f"{rrow} : {rcol}")
+print(f"{rrow} : {rcol[DEVO]} : {rcol[DUCKY]}")
