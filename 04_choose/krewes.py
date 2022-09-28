@@ -10,7 +10,7 @@ QCC:
     Why do we need to convert krewes.keys() into a list to access the keys.
 OPS SUMMARY:
     1. Randomly choose a key from the list of keys in dictionary krewes.
-    2. Randomly choose an devo from the value at the key.
+    2. Randomly choose a devo from the value at the key.
     3. Print both.
 """
 

@@ -1,42 +1,40 @@
 """
 Daniel Yentin
 SoftDev
-K04 -- Python program to randomly select an element from a dictionary
-2022-09-22
+K05 -- Python program to randomly select an element from a dictionary that is read from an input file
+2022-09-29
 time spent: 0.5
 DISCO:
-    There are multiple different ways of generating randomness.
+	There are multiple different ways of parsing input
 QCC:
-    Why do we need to convert krewes.keys() into a list to access the keys.
+	
 OPS SUMMARY:
-    1. Randomly choose a key from the list of keys in dictionary krewes.
-    2. Randomly choose an devo from the value at the key.
-    3. Print both.
+	1. 
 """
 
 import random
 
-PD = 0
-DEVO = 1
-DUCKY = 2
-
-dict = {}
+krewes = {}
 with open("krewes.txt", "r") as f:
-    tempstr = f.readlines()
-    templist = tempstr.split("@@@")
-    for i in templist:
-        templist[i] = templist[i].split("$$$")
-    for i in templist:
-        for _ in templist[i]:
-            if templist[i][PD] not in dict:
-                dict[templist[i][PD]] = [(templist[i][DEVO], templist[i][DUCKY])]
-            else:
-                dict[templist[i][PD]].append((templist[i][DEVO], templist[i][DUCKY]))
+	tempstr = f.read().strip() # read in the file and remove trailing \n character
+	templist = tempstr.split("@@@") # split string along the "@@@" delimitter into a list 
+	for i in range(len((templist))): 
+		templist[i] = templist[i].split("$$$") # split each item along the "$$$" delimitter into a list containing the Period, Devo, and Ducky
+	for i in range(len((templist))):
 
-DEVO = 0
-DUCKY = 1
+		period = int(templist[i][0]) # to make keys be integers and not strings
+		devo = templist[i][1]
+		ducky = templist[i][2]
 
-rrow = random.choice(list(krewes.keys()))
-rcol = random.choice(krewes[rrow])
+		# add the devo ducky pair into the correct pair
+		if period not in krewes:
+			krewes[period] = [(devo, ducky)]
+		else:
+			krewes[period].append((devo, ducky))
 
-print(f"{rrow} : {rcol[DEVO]} : {rcol[DUCKY]}")
+period = random.choice(list(krewes.keys()))
+DevoDucky = random.choice(krewes[period])
+devo = DevoDucky[0]
+ducky = DevoDucky[1]
+
+print(f"{period} : {devo} : {ducky}")
