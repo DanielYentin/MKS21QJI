@@ -4,7 +4,6 @@ SoftDev
 K04 -- Python program to randomly select an element from a dictionary
 2022-09-22
 time spent: 0.5
-
 DISCO:
     There are multiple different ways of generating randomness.
 QCC:
@@ -17,23 +16,6 @@ OPS SUMMARY:
 
 import random
 
-PD = 0
-DEVO = 1
-DUCKY = 2
-
-
-with open("krewes.txt", "r") as f:
-    tempstr = f.readlines()
-    templist = tempstr.split("@@@")
-    for i in templist:
-        templist[i] = templist[i].split("$$$")
-    dict = {}
-    for i in templist:
-        for _ in templist[i]:
-            if templist[i][PD] not in dict:
-                dict[templist[i][PD]]
-            else:
-                dict[templist[i][PD]].append([])
 
 krewes = {
 	2: ["NICHOLAS",  "ANTHONY",  "BRIAN",  "SAMUEL",  "JULIA",  "YUSHA",  "CORINA",  "CRAIG",  "FANG MIN",  "JEFF",  "KONSTANTIN",  "AARON",  "VIVIAN",  "AYMAN",  "TALIA",  "FAIZA",  "ZIYING",  "YUK KWAN",  "DANIEL",  "WEICHEN",  "MAYA",  "ELIZABETH",  "ANDREW",  "VANSH",  "JONATHAN",  "ABID",  "WILLIAM",  "HUI",  "ANSON",  "KEVIN",  "DANIEL",  "IVAN",  "JASMINE",  "JEFFREY"], 
