@@ -34,8 +34,8 @@ with open("krewes.txt", "r") as f:
 			krewes[period].append((devo, ducky))
 
 period = random.choice(list(krewes.keys()))
-DevoDucky = random.choice(krewes[period])
-devo = DevoDucky[0]
-ducky = DevoDucky[1]
+devo_ducky = random.choice(krewes[period])
+devo = devo_ducky[0]
+ducky = devo_ducky[1]
 
 print(f"{period} : {devo} : {ducky}")
