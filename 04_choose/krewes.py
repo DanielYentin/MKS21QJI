@@ -1,5 +1,5 @@
 """
-Daniel Yentin
+Arch BTW: Daniel Yentin, Jasmine Yuen
 SoftDev
 K04 -- Python program to randomly select an element from a dictionary
 2022-09-22
