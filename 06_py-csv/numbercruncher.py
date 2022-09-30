@@ -16,7 +16,7 @@ OPS SUMMARY:
     5. Profit
 """
 
-from math import ceil
+import math
 import random
 
 def main() ->  None:
@@ -67,7 +67,7 @@ def pick_rand_weighted(input: dict[str, float]) -> str:
     weighted_occupations = []
     # In the for loop below this is called unpacking in python. Simillar to how the enumerate function works 
     for k, v in input.items(): # create a list of occupations, the amount of each corresponding to their percentage (i.e. Sales : 10.2 would appear 10 times (round value up))
-        for _ in range(ceil(v)): # better than using round to avoid rounding occupations with percentages < 1 to 0
+        for _ in range(math.ceil(v)): # better than using round to avoid rounding occupations with percentages < 1 to 0
             weighted_occupations.append(k)
     occupation = random.choice(weighted_occupations)
     return occupation
