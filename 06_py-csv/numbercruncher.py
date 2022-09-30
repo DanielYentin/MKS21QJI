@@ -1,17 +1,22 @@
 """
 Mansplaining-manipulating-malewives: Daniel Yentin, Kevin Xiao
 SoftDev
-K06 -- 
+K06 -- Build a dictionary from a CSV file
 2022-10-03
-time spent: 0.5
+time spent: 1
 DISCO:
-
+    rsplit() is cool
 QCC:
-
+    I dont understand how random.choices() works with inputed weights
 OPS SUMMARY:
-
+    1. Parse CSV input file
+    2. Build dictionary from parsed input
+    3. Pick a random weighted occupation
+    4. ...?
+    5. Profit
 """
 
+from math import ceil
 import random
 
 def main() ->  None:
@@ -27,7 +32,7 @@ def build_dict(input: str) -> dict[str, float]:
     with open(input, 'r') as f:
         lines: list[str] = f.readlines()
 
-    for i in range(1, len(lines)-1):
+    for i in range(1, len(lines)):
         line: str = lines[i].strip() # strip the newline of the end of each line
 
         """
@@ -57,7 +62,14 @@ def build_dict(input: str) -> dict[str, float]:
 def pick_rand_weighted(input: dict[str, float]) -> str:
     occupations: list[str] = list(input.keys())
     percentages: list[float] = list(input.values())
-    occupation: str = random.choices(occupations, weights=percentages, k=1)[0] # weights are not correct
+    #occupation: str = random.choices(occupations, weights=percentages, k=1)[0] # weights are not correct, use diffrent method instead
+    
+    weighted_occupations = []
+    # In the for loop below this is called unpacking in python. Simillar to how the enumerate function works 
+    for k, v in input.items(): # create a list of occupations, the amount of each corresponding to their percentage (i.e. Sales : 10.2 would appear 10 times (round value up))
+        for _ in range(ceil(v)): # better than using round to avoid rounding occupations with percentages < 1 to 0
+            weighted_occupations.append(k)
+    occupation = random.choice(weighted_occupations)
     return occupation
 
 if __name__ == "__main__":
