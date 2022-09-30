@@ -6,8 +6,10 @@ K06 -- Build a dictionary from a CSV file
 time spent: 1
 DISCO:
     rsplit() is cool
+    random.choices() can take in weights
 QCC:
-    I dont understand how random.choices() works with inputed weights
+    I dont understand how random.choices() works with inputed weights. 
+    UPDATE: 
 OPS SUMMARY:
     1. Parse CSV input file
     2. Build dictionary from parsed input
@@ -21,7 +23,7 @@ import random
 
 def main() ->  None:
     krewes: dict[str, float] = build_dict("occupations.csv")
-    print(krewes)
+    #print(krewes)
 
     occupation: str = pick_rand_weighted(krewes)
     print(occupation)
@@ -32,7 +34,7 @@ def build_dict(input: str) -> dict[str, float]:
     with open(input, 'r') as f:
         lines: list[str] = f.readlines()
 
-    for i in range(1, len(lines)):
+    for i in range(1, len(lines)-1):
         line: str = lines[i].strip() # strip the newline of the end of each line
 
         """
@@ -62,14 +64,13 @@ def build_dict(input: str) -> dict[str, float]:
 def pick_rand_weighted(input: dict[str, float]) -> str:
     occupations: list[str] = list(input.keys())
     percentages: list[float] = list(input.values())
-    #occupation: str = random.choices(occupations, weights=percentages, k=1)[0] # weights are not correct, use diffrent method instead
-    
-    weighted_occupations = []
-    # In the for loop below this is called unpacking in python. Simillar to how the enumerate function works 
-    for k, v in input.items(): # create a list of occupations, the amount of each corresponding to their percentage (i.e. Sales : 10.2 would appear 10 times (round value up))
-        for _ in range(math.ceil(v)): # better than using round to avoid rounding occupations with percentages < 1 to 0
-            weighted_occupations.append(k)
-    occupation = random.choice(weighted_occupations)
+    occupation: str = random.choices(occupations, weights=percentages)[0]
+    # weighted_occupations = []
+    # # In the for loop below this is called unpacking in python. Simillar to how the enumerate function works 
+    # for k, v in input.items(): # create a list of occupations, the amount of each corresponding to their percentage (i.e. Sales : 10.2 would appear 10 times (round value up))
+    #     for _ in range(math.ceil(v)): # better than using round to avoid rounding occupations with percentages < 1 to 0
+    #         weighted_occupations.append(k)
+    # occupation = random.choice(weighted_occupations)
     return occupation
 
 if __name__ == "__main__":
