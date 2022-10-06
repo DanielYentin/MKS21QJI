@@ -1,13 +1,37 @@
 # your heading here
 
+from cProfile import run
 from flask import Flask
+
+import csv
+import random
+
+def createDict():
+    jobs = {}
+    with open('occupations.csv') as f:
+        r = csv.reader(f)
+        next(r)
+        for line in r:
+            jobs[line[0]] = float(line[1])
+        return jobs
+
+def chooseJob(jobs):
+    return random.choices(list(jobs.keys()), weights=jobs.values())
+    # target_sum = random.randint(0, int(jobs["Total"]))
+    # running_sum = 0
+    # for k, v in jobs[:-1]:
+    #     if running_sum+v > target_sum:
+    #         return k
+    #     running_sum += v
+
 
 app = Flask(__name__) # Q0: Where have you seen similar syntax in other langs?
 
 @app.route("/") # Q1: What points of reference do you have for meaning of '/'?
 def hello_world():
     print(__name__) # Q2: Where will this print to? Q3: What will it print?
-    return "No hablo queso!"  # Q4: Will this appear anywhere? How u know?
+    jobs = createDict()
+    return chooseJob(jobs)
 
 app.run()  # Q5: Where have you seen similar constructs in other languages?
 
