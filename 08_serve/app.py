@@ -1,10 +1,8 @@
 # your heading here
 
-from cProfile import run
-from flask import Flask
 
-import csv
-import random
+from flask import Flask
+import csv, random
 
 def createDict(filename: str) -> dict[str, float]:
     '''
@@ -69,23 +67,3 @@ def main() -> None:
 
 jobs = createDict("occupations.csv")
 app.run()
-
-
-'''
-DISCO:
-	This is not a secure connection so "http" must be used instead of "https"
-
-QCC:
-0. Java
-1. The root directory
-2. The terminal.
-3. The name of this file
-4. The website. I tested it
-5. Processing
-...
-
-INVESTIGATIVE APPROACH:
-<Your concise summary of how
- you and your team set about
- "illuminating the cave of ignorance" here...>
-'''
