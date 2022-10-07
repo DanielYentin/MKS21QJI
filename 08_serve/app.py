@@ -6,17 +6,24 @@ from flask import Flask
 import csv
 import random
 
-def createDict():
+def createDict(filename: str) -> dict[str, float]:
+    '''
+    Returns a dictionary from a csv 
+    '''
     jobs = {}
-    with open('occupations.csv') as f:
+    with open(filename) as f:
         r = csv.reader(f)
         next(r)
         for line in r:
             jobs[line[0]] = float(line[1])
+        jobs.pop("Total")        
         return jobs
 
-def chooseJob(jobs):
-    return random.choices(list(jobs.keys()), weights=jobs.values())
+def chooseRandomWeightedJob(jobs: dict[str, float]) -> str:
+    '''
+    Returns a random weighted key from the dictionary
+    '''
+    return random.choices(list(jobs.keys()), weights=jobs.values())[0]
     # target_sum = random.randint(0, int(jobs["Total"]))
     # running_sum = 0
     # for k, v in jobs[:-1]:
@@ -24,16 +31,44 @@ def chooseJob(jobs):
     #         return k
     #     running_sum += v
 
+def keysAsString(jobs: dict[str, float]) -> str:
+    '''
+    Return keys of a dictionary as a string
+    '''
+    keys = list(jobs.keys())
+    keyString = "<br>".join(keys)
+    return keyString
 
-app = Flask(__name__) # Q0: Where have you seen similar syntax in other langs?
 
-@app.route("/") # Q1: What points of reference do you have for meaning of '/'?
-def hello_world():
-    print(__name__) # Q2: Where will this print to? Q3: What will it print?
-    jobs = createDict()
-    return chooseJob(jobs)
+app = Flask(__name__)
 
-app.run()  # Q5: Where have you seen similar constructs in other languages?
+@app.route("/")
+def main() -> None:
+    '''
+    Return a string contating:
+        TNPG & roster,
+        list of occupations,
+        random weigted occupation
+    '''
+    print(__name__)
+
+    returnList = []
+    
+    returnList.append("JAD: Abid Talukder, Jonathan Song, Daniel Yentin")
+    returnList.append("<br>")
+    print("added TNPG and Roster")
+    
+    returnList.append(keysAsString(jobs))
+    returnList.append("<br>")
+    print("added list of jobs")
+
+    returnList.append("Random selected job: " + chooseRandomWeightedJob(jobs))
+    print("added random jobs")
+
+    return "<br>".join(returnList)
+
+jobs = createDict("occupations.csv")
+app.run()
 
 
 '''
