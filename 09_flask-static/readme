@@ -1,0 +1,13 @@
+Q: What happens when you access this file
+     via
+      http://localhost:5000/static/foo 
+     ?
+
+A. It downloads the file containing the contents of itself, but does not change what is displayed on the website in app.py
+
+
+Q: What happens when you access this file via
+         http://localhost:5000/static/foo.html 
+                 ?
+
+A. It renders the file as html
