@@ -1,0 +1,5 @@
+Q0: What will happen if you remove render_template from this line? (log your prediction before you pull the trigger...)
+
+P: We will get a runtime error because render_template does not exist
+
+A. Nothing happens?
