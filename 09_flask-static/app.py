@@ -1,5 +1,4 @@
-
-# Clyde 'Thluffy' Sinclair
+# JAD: Jonathan, Abid, Daniel
 # SoftDev
 # Oct 2022
 

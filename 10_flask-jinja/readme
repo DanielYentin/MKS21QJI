@@ -1,5 +1,11 @@
 Q0: What will happen if you remove render_template from this line? (log your prediction before you pull the trigger...)
-
 P: We will get a runtime error because render_template does not exist
-
 A. Nothing happens?
+
+Q1: Can all of your teammates confidently predict the URL to use to load this page?
+P: http://127.0.0.1:5000/my_foist_template
+A: http://127.0.0.1:5000/my_foist_template
+
+Q2: What is the significance of each argument? Simplest, most concise answer best.
+P: 'model_tmplt.html' indicated what file to use as the template, "fooooo" is the webpage title, "coll" is the collection being itterated over 
+A: 'model_tmplt.html' indicated what file to use as the template, "fooooo" is the webpage title, "coll" is the collection being itterated over 
