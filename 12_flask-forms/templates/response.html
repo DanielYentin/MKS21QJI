@@ -19,22 +19,29 @@
 <html>
 
   <head>
-    <title> LOGIN PAGE </title>
+    <title> RESPONSE PAGE </title>
   </head>
 
   <body>
     <h1>
-      Welcome, Travelers of the Intertoobz!
+      THANK YOU FOR ANSWERING THE FORM!!!
     </h1>
 
 
     <h3>
-      Enter your username below to proceed.
+      METHOD USED: {{method_used}}
     </h3>
-    <form action="/auth" method ='GET'>
-      <input type="text" name="username">
-      <input type="submit" name="sub1" value="testname">
-    </form>
+
+    <h3>
+      INPUTTED USERNAME: {{username}}
+    </h3>
+
+    <body>
+      GET: get method holds the args in the url, making it unsecure if you want to enter confidential information
+      <br>
+      POST: post method does not hold the args in the url
+    </body>
+
     <br>
   </body>
 

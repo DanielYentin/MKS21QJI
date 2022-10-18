@@ -1,0 +1,21 @@
+body {
+    background-color: white;
+}
+
+.top {
+    background-color: red;
+    text-align: center;
+}
+
+.middle {
+    background-color: blue;
+}
+
+th {
+    text-align: left;
+}
+
+.bottom {
+    background-color: green;
+    text-align: right;
+}
