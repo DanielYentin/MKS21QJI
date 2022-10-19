@@ -4,29 +4,11 @@
 
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
-from flask import request           #facilitate form submission
 
 #the conventional way:
-#from flask import Flask, render_template, request
+#from flask import Flask, render_template
 
 app = Flask(__name__)    #create Flask object
-
-
-'''
-trioTASK:
-~~~~~~~~~~~ BEFORE RUNNING THIS, ~~~~~~~~~~~~~~~~~~
-...read for understanding all of the code below.
-Some will work as written; other sections will not.
-TASK: Predict which...
-Devise some simple tests you can run to "take apart this engine," as it were.
-Execute your tests.
-Process results.
-
-PROTIP: Insert your own in-line comments
- wherever they will help
-  your future self and/or current teammates
-   understand what is going on.
-'''
 
 @app.route("/")
 def main():
