@@ -1,3 +1,7 @@
+# <div ID="success"></div>: Daniel Yentin, Ivan Yeung
+# SoftDev
+# Oct 2022
+
 DISCO
 * Can style multiple tags by separating with commas
 * Link a css file to an html file by adding  <link rel=“stylesheet” type=“text/css” href=“STYLE FILE”> inside <head></head>
