@@ -28,48 +28,9 @@ PROTIP: Insert your own in-line comments
    understand what is going on.
 '''
 
-@app.route("/", methods=['GET', 'POST'])
-def disp_loginpage():
-    print("\n\n\n")
-    print("***DIAG: this Flask obj ***")
-    print(app)
-    print("***DIAG: request obj ***")
-    print(request)
-    print("***DIAG: request.args ***")
-    print(request.args)
-    print("***DIAG: request.form ***")
-    print(request.form)
-    #print("***DIAG: request.args['username']  ***")
-    #print(request.args['username'])
-    print("***DIAG: request.headers ***")
-    print(request.headers)
-    return render_template( 'login.html' )
-
-
-@app.route("/auth", methods=['GET', 'POST'])
-def authenticate():
-    # print("\n\n\n")
-    # print("***DIAG: this Flask obj ***")
-    # print(app)
-    # print("***DIAG: request obj ***")
-    # print(request)
-    # print("***DIAG: request.args ***")
-    # print(request.args)
-    # print("***DIAG: request.form ***")
-    # print(request.form)
-    # print("***DIAG: request.args['username']  ***")
-    # print(request.args['username'])
-    # print("***DIAG: request.headers ***")
-    # print(request.headers)
-    # return "Waaaa hooo HAAAH"  #response to a form submission
-    information_format = None
-    if (request.method == 'GET'):
-        information_format = request.args
-    elif (request.method == 'POST'):
-        information_format = request.form
-    
-    return render_template('response.html', method_used = request.method, username = information_format['username'] )
-
+@app.route("/")
+def main():
+    return render_template("index.html")
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified

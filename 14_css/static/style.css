@@ -1,0 +1,39 @@
+.body {
+    background-color: #666666;
+    width: 800px;
+    height: 263px;
+    border: 5px;
+    border-style: solid;
+    border-color: #666666;
+    margin:auto;
+}
+
+h1, h3 {
+  margin: 0px;
+}
+
+.content {
+  width: 150px;
+  vertical-align: top
+}
+
+.top {
+    background-color: #bebebe;
+    color: white;
+    text-align: center;
+}
+
+.middle {
+    background-color: #767676;
+}
+
+th {
+    text-align: left;
+}
+
+
+.bottom {
+    background-color: #565656;
+    color: white;
+    text-align: right;
+}
