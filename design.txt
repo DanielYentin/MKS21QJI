@@ -1,0 +1,16 @@
+students = 3,300
+
+faculty = 200 
+
+###floors = 10
+
+students_per_class = 30
+
+classes_per_period = 110
+
+periods_per_day = 7 = (10 periods - break*2 - lunch) / day
+
+classes_per_day = 770
+
+classes_per_faculty = ~4
+
