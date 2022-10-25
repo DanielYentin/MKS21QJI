@@ -17,10 +17,19 @@ c = db.cursor()               #facilitate db ops -- you will use cursor to trigg
 
 # < < < INSERT YOUR TEAM'S POPULATE-THE-DB CODE HERE > > >
 
+with open("students.csv", 'r') as students:
+    students = csv.DictReader(students)
 
-command = ""          # test SQL stmt in sqlite3 shell, save as string
-c.execute(command)    # run SQL statement
+# command = ""          # test SQL stmt in sqlite3 shell, save as string
+# c.execute(command)    # run SQL statement
 
+    c.execute("create table students(name text, age int, id int)")
+    for row in students:
+        name = row['name']
+        age = row['age']
+        id = row['id']
+        
+        c.execute(f"insert into students values('{name}', {age}, {id})")
 #==========================================================
 
 db.commit() #save changes
