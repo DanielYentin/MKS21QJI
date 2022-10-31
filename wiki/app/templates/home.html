@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Madlibs Adlibs</title>
+    </head>
+    <body>
+        <div class="info">
+            <div>Username: </div>
+            <div>Password: </div>
+        </div>
+        
+        <div class="options">
+            <div>
+                <button type="button" formaction="/create.html">Create a story</button> 
+            </div>
+            <div>
+                <button type="button" form="add" formaction="/add.html">Add to a story: </button> 
+                <select id="add"></select>
+            </div>
+            <div>
+                <button type="button" form="view" formaction="/view.html">View a story: </button> 
+                <select id="view">
+                    {% for item in collection %}
+
+                </select>
+            </div>
+        </div>
+    </body>
+</html>
