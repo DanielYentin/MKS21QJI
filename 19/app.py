@@ -23,17 +23,21 @@ def root():
     print(app)
     if ('username' in session):
         return render_template('response.html')
-    else: 
-        return render_template('login.html')
-    
-
-@app.route("/login", methods=['GET', 'POST'])
-def login():
-    if (request.method == 'POST'):
-        session[username] = request.form[username]
-        return render_template('response.html')
     else:
         return render_template('login.html')
+
+@app.route("/login", methods=['POST'])
+def login():
+    if (request.form["username"] == username):
+        if (request.form["password"] == password):    
+            session["username"] = request.form["username"]
+            return render_template('response.html')
+    return render_template('login.html')
+
+@app.route("/logout", methods=['POST'])
+def logout():
+    session.pop("username")
+    return render_template('login.html')
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
