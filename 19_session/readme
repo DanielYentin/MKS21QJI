@@ -1,0 +1,16 @@
+Ivan Yeung Daniel Yentin (Team  <div ID="success"></div>)
+SoftDev
+K19 -- Sessions
+2022-11-07
+time spent: 1hr
+
+DISCO:
+* ```from flask import session ``` imports cookies into python
+* ```session[KEY] = value``` creates new key in session
+* ```session.pop(KEY)``` removes a key and its value from the session
+* action attribute in html tells backend which function to refer to when it is activated
+
+QCC:
+* We couldn't seem to make the button go to the logout function using action attribute in the marker so we wrapped it in a form and added the attribute there
+* How do you make buttons direct to a route in html?
+* How is the cookies transferred from the local machine to other machines?
