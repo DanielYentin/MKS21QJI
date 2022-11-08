@@ -31,11 +31,11 @@ def root():
         #returns login page if cookie does not have that information
         return redirect("/login", 307)
 
-@app.route("/login", methods=['POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     return render_template('login.html')
     
-@app.route("/auth", methods=['POST'])
+@app.route("/auth", methods=['GET', 'POST'])
 def login_auth():
     #checks if input for the username form matches with hardcoded username
     if (request.form["username"] == username):
@@ -53,7 +53,7 @@ def login_auth():
         print("***DIAG: username did not match ***")
         return redirect("/login", 307)
 
-@app.route("/logout", methods=['POST'])
+@app.route("/logout", methods=['GET', 'POST'])
 # this function is called by the logout button when it is pressed on the response page
 def logout():
     #cookie holding password is removed
