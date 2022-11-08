@@ -26,18 +26,17 @@ def root():
     #checks if cookie has username and password stored
     if ('username' in session):
         print("***DIAG: user has already logged  ***")
-        return redirect(url_for("response"), 307)
+        return redirect("/response", 307)
     else:
         #returns login page if cookie does not have that information
-        return redirect(url_for("login"), 307)
+        return redirect("/login", 307)
 
-@app.route("/login", methods=['GET', 'POST'])
+@app.route("/login", methods=['POST'])
 def login():
     return render_template('login.html')
     
-@app.route("/auth", methods=['GET', 'POST'])
+@app.route("/auth", methods=['POST'])
 def login_auth():
-    print("test")
     #checks if input for the username form matches with hardcoded username
     if (request.form["username"] == username):
         print("***DIAG: username matches ***")
@@ -46,13 +45,13 @@ def login_auth():
             print("***DIAG: password matches ***")
             #when both coditions are met, password is stored in the cookie and the response page is rendered
             session["username"] = request.form["username"]
-            return redirect(url_for("response"), 307)
+            return redirect("/response", 307)
         else:
             print("***DIAG: password did not match ***")
-            return redirect(url_for("login"), 307)
+            return redirect("/login", 307)
     else:
         print("***DIAG: username did not match ***")
-        return redirect(url_for("login"), 307)
+        return redirect("/login", 307)
 
 @app.route("/logout", methods=['POST'])
 # this function is called by the logout button when it is pressed on the response page
@@ -60,9 +59,9 @@ def logout():
     #cookie holding password is removed
     session.pop("username")
     print("***DIAG: password removed from cookie ***")
-    return redirect(url_for("login"), 307)
+    return redirect("/login", 307)
 
-@app.route("/response", methods=['POST'])
+@app.route("/response", methods=['GET', 'POST'])
 def response():
     return render_template('response.html')
 
