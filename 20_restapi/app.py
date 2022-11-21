@@ -1,3 +1,9 @@
+# TNPG: Daniel Yentin, <Frist> <Lsat>
+# SoftDev
+# K<nn> -- <Title/Topic/Summary... (Aim for concision, brevity, CLARITY. Write to your future self...)>
+# 2022-11-23
+# time spent: .5 
+
 import flask
 from urllib.request import urlopen
 import json
