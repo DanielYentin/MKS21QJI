@@ -1,18 +1,17 @@
 Collected Knowledge & Wisdom on
-# API_NAME_HERE
+# NASA API
 ---
 ## Provides:
-This API provides...
-
+This API provides a JSON file contatining things including the image url and explanation
 
 
 ### Pain factor: 0
 
-### Key Provisioning:     
+### Key Provisioning: 
 
-- An aspect of the process worth pointing out.
+- You need a valid email adress to recieve a key.
 - Another thing you’ll need to know/do to get a key.
-- ...
+
 
 ### Quotas:
 - ...
