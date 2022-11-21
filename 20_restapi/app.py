@@ -3,10 +3,6 @@ from urllib.request import urlopen
 import json
 
 api = "https://api.nasa.gov/planetary/apod?api_key=0WqacuLbuMVfkaOdKQ2PExkzky1RZFFvlq59Gcxl"
-
-
-
-
 app = flask.Flask(__name__)
 
 @app.route("/")
