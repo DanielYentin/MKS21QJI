@@ -35,7 +35,7 @@ def root():
 def login():
     return render_template('login.html')
     
-@app.route("/auth", methods=['GET', 'POST'])
+@app.route("/login/auth", methods=['GET', 'POST'])
 def login_auth():
     #checks if input for the username form matches with hardcoded username
     if (request.form["username"] == username):
