@@ -3,6 +3,13 @@
 # K<nn> -- <Title/Topic/Summary... (Aim for concision, brevity, CLARITY. Write to your future self...)>
 # 2022-11-23
 # time spent: .5 
+# DISCO: 
+#   1. the urllib library is used to make requests to a server, using the urlopen() function
+#   2. the json library is used to parse the JSON data returned by the server
+
+# QCC: 
+#   1. what other libraries can be used instead of urllib?
+#   2. what other serialization formats are there besides JSON and why is JSON prefered? 
 
 import flask
 from urllib.request import urlopen

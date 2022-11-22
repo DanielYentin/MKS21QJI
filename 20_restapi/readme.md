@@ -21,22 +21,14 @@ This API provides a JSON file contatining things including the image url and exp
 ## The Good:
 - Succesfully got API key
 ## The Bad:
-- Teamate was absent :(
+- Teamate was absent :(. (Now here)
 ## The Ugly:
 - N/A
 
 
-**Location:** 
+**Location:** https://api.nasa.gov/
 
 ---
-
-Accurate as of (last update):    2022-11-21
-
-Contributors:
-
-Daniel Yentin, pd 2  
-<Frist> <Lsat>, pd 2  
-
 # DISCO: 
     1. the urllib library is used to make requests to a server, using the urlopen() function
     2. the json library is used to parse the JSON data returned by the server
@@ -44,3 +36,10 @@ Daniel Yentin, pd 2
 # QCC: 
     1. what other libraries can be used instead of urllib?
     2. what other serialization formats are there besides JSON and why is JSON prefered? 
+
+Accurate as of (last update):    2022-11-21
+
+Contributors:
+
+Daniel Yentin, pd 2  
+Kosta Dubovskiy, pd 2  
