@@ -1,6 +1,6 @@
-# TNPG: Daniel Yentin, <Frist> <Lsat>
+# TNPG: Daniel Yentin, Kosta Dubovskiy
 # SoftDev
-# K<nn> -- <Title/Topic/Summary... (Aim for concision, brevity, CLARITY. Write to your future self...)>
+# K20 -- Restfull APIs
 # 2022-11-23
 # time spent: .5 
 # DISCO: 
