@@ -16,7 +16,7 @@ from urllib.request import urlopen
 import json
 
 api_key = ""
-with open("nasa_key.txt", 'r') as f:
+with open("key_nasa.txt", 'r') as f:
     api = "https://api.nasa.gov/planetary/apod?api_key="
     key = f.read().strip()
     api_key = api + key
