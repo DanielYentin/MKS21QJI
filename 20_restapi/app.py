@@ -15,12 +15,17 @@ import flask
 from urllib.request import urlopen
 import json
 
-api = "https://api.nasa.gov/planetary/apod?api_key=0WqacuLbuMVfkaOdKQ2PExkzky1RZFFvlq59Gcxl"
+api_key = ""
+with open("nasa_key.txt", 'r') as f:
+    api = "https://api.nasa.gov/planetary/apod?api_key="
+    key = f.read().strip()
+    api_key = api + key
+    
 app = flask.Flask(__name__)
 
 @app.route("/")
 def root():
-    response = urlopen(api)
+    response = urlopen(api_key)
     data_json = json.loads(response.read())
 
     url = data_json["url"]
