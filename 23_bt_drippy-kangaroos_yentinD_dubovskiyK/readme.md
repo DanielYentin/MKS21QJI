@@ -14,4 +14,4 @@ If the two classes have conflicting styles like so:
     font-size: 5px;
 }```
 
-Then the first class in chronological order of being listed in the class="" string takes precedence. Here it would be class2.
+Then the first class in the order of being listed in the class="" string takes precedence. Here it would be class2.
