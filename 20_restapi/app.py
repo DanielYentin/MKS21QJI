@@ -1,4 +1,4 @@
-# TNPG: Daniel Yentin, Kosta Dubovskiy
+# Yodelers: Daniel Yentin, Kosta Dubovskiy
 # SoftDev
 # K20 -- Restfull APIs
 # 2022-11-23
