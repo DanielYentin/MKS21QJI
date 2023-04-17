@@ -1,0 +1,5 @@
+Javascript, similar to python, has a concept of truthiness. You can test for truthiness using the "==" operator. 
+
+For example any empty string is considered to be falsey, whereas and non empty string is considerd truthy. So doing a comparison such as "" == false would return true, and doing a comparison such as "hello world" == true would also return true.
+
+If you want to compare strict equality, where the types must also match, then you can use the "===" operator.   
